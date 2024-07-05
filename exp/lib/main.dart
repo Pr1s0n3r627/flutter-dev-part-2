@@ -1,25 +1,18 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
-}
+  var text = 'Inside Container\n' * 9 + 'Inside Container';
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const myMargin = EdgeInsets.all(10);
+  const myPadding = EdgeInsets.all(75);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 119, 119, 119),
-        appBar: AppBar(
-          title: Text('B R E A D',
-              style: TextStyle(color: Color.fromARGB(255, 175, 173, 173))),
-          backgroundColor: Color.fromRGBO(104, 104, 104, 1),
-        ),
-      ),
-    );
-  }
+          backgroundColor: Colors.yellow,
+          body: Container(
+              margin: myMargin,
+              padding: myPadding,
+              color: Colors.red,
+              child:
+                  Text(text, style: const TextStyle(color: Colors.white, fontSize: 50))))));
 }
